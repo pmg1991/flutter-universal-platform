@@ -86,6 +86,12 @@ abstract class UniversalPlatform {
 
   /// Indicates whether this program is running on an Apple iOS device.
   static bool get isFuchsia => value == UniversalPlatformType.Fuchsia;
+
+  /// Indicates whether this program is running on a desktop machine.
+  static bool get isDesktop => isMacOS || isWindows || isLinux;
+
+  /// Indicates whether this program is running on a mobile device.
+  static bool get isMobile => isAndroid || isIOS || isFuchsia;
 }
 
 /// A type of platform.
